@@ -2,7 +2,7 @@ package songcup;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import songcup.buildlogic.SongCupBuildLogic;
+//import songcup.buildlogic.SongCupBuildLogic;
 import songcup.userinterface.UserInterfaceImpl;
 
 public class SongCupApplication extends Application {
@@ -11,7 +11,7 @@ public class SongCupApplication extends Application {
     public void start(Stage primaryStage)  {
 
         UserInterfaceImpl uiImpl = new UserInterfaceImpl(primaryStage);
-        SongCupBuildLogic.build(uiImpl);
+//        SongCupBuildLogic.build(uiImpl);
 
     }
 
