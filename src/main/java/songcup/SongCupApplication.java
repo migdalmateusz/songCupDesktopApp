@@ -1,18 +1,15 @@
 package songcup;
 
 import javafx.application.Application;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
-import songcup.userinterface.Scena1;
-//import songcup.buildlogic.SongCupBuildLogic;
-//import songcup.userinterface.UserInterfaceImpl;
+import songcup.userinterface.CheckedScene;
 
 public class SongCupApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) {
 
-        new Scena1(primaryStage);
+        new CheckedScene(primaryStage);
 
     }
 

@@ -1,4 +1,4 @@
-package songcup;
+package songcup.computationlogic;
 
 public class Scores {
 
@@ -7,10 +7,18 @@ public class Scores {
 
     public static void addHeroesScore() {
         heroesScore = heroesScore + 1;
-        System.out.println(heroesScore);
     }
     public static void addRebelScore() {
         rebelScore = rebelScore + 1;
-        System.out.println(rebelScore);
+    }
+
+    public static String winnerChose() {
+        String winner;
+        if (heroesScore > rebelScore) {
+            winner = "HEROES";
+        } else {
+            winner = "REBEL REBEL";
+        }
+        return winner;
     }
 }

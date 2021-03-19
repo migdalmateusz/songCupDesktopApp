@@ -9,16 +9,16 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import songcup.Scores;
+import songcup.computationlogic.Scores;
 
-public class Scena1 {
+public class CheckedScene {
 
     private final Stage stage;
     private static final double WINDOW_Y = 500;
     private static final double WINDOW_X = 500;
 
 
-    public Scena1(Stage stage) {
+    public CheckedScene(Stage stage) {
         this.stage = stage;
         initializeUserInterface();
     }
@@ -56,9 +56,9 @@ public class Scena1 {
         EventHandler<MouseEvent> eventHandlerRebel = e -> Scores.addRebelScore();
         button2.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerRebel);
 
-        EventHandler<MouseEvent> eventHandlerNext = e -> new Scena2(stage);
+        EventHandler<MouseEvent> eventHandlerNext = e -> new FinalScene(stage);
         button3.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerNext);
-        
+
         Scene scene = new Scene(gridPane);
 
         stage.setTitle("SONG SUP");
