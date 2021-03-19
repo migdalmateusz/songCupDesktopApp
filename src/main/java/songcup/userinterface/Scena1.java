@@ -9,6 +9,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import songcup.Scores;
 
 public class Scena1 {
 
@@ -26,7 +27,9 @@ public class Scena1 {
 
         Text text1 = new Text("Which song do you like more?");
 
-        Button button1 = new Button("song one");
+        Button button1 = new Button("Heroes");
+        Button button2 = new Button("Rebel Rebel");
+        Button button3 = new Button("NEXT");
 
         GridPane gridPane = new GridPane();
 
@@ -35,18 +38,27 @@ public class Scena1 {
         gridPane.setVgap(5);
         gridPane.setHgap(5);
         gridPane.setAlignment(Pos.CENTER);
-        gridPane.add(text1, 0, 0);
-        gridPane.add(button1, 0, 2);
+        gridPane.add(text1, 1, 0);
+        gridPane.add(button1, 0, 1);
+        gridPane.add(button2, 3, 1);
+        gridPane.add(button3, 2, 2);
 
         text1.setStyle("-fx-font: normal bold 20px 'serif' ");
         button1.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
+        button2.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
+        button3.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
 
         gridPane.setStyle("-fx-background-color: BEIGE;");
 
-        EventHandler<MouseEvent> eventHandler = e -> new Scena2(stage);
+        EventHandler<MouseEvent> eventHandlerHeroes = e -> Scores.addHeroesScore();
+        button1.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerHeroes);
 
-        button1.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandler);
+        EventHandler<MouseEvent> eventHandlerRebel = e -> Scores.addRebelScore();
+        button2.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerRebel);
 
+        EventHandler<MouseEvent> eventHandlerNext = e -> new Scena2(stage);
+        button3.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerNext);
+        
         Scene scene = new Scene(gridPane);
 
         stage.setTitle("SONG SUP");
