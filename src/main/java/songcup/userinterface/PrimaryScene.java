@@ -10,26 +10,22 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import songcup.buildlogic.SongCupBuildLogic;
-import songcup.computationlogic.SongUtilities;
 
-public class CheckedScene {
+public class PrimaryScene {
 
     private final Stage stage;
     private static final double WINDOW_Y = 500;
     private static final double WINDOW_X = 500;
 
-    public CheckedScene(Stage stage) {
+    public PrimaryScene(Stage stage) {
         this.stage = stage;
         initializeUserInterface();
     }
 
     private void initializeUserInterface() {
+        Text text1 = new Text("Do you wanna play?");
 
-        Text text1 = new Text("Which song do you like more?");
-
-        Button button1 = new Button("Heroes");
-        Button button2 = new Button("Rebel Rebel");
-        Button button3 = new Button("NEXT");
+        Button button1 = new Button("OK");
 
         GridPane gridPane = new GridPane();
 
@@ -40,24 +36,14 @@ public class CheckedScene {
         gridPane.setAlignment(Pos.CENTER);
         gridPane.add(text1, 1, 0);
         gridPane.add(button1, 0, 1);
-        gridPane.add(button2, 3, 1);
-        gridPane.add(button3, 2, 2);
 
         text1.setStyle("-fx-font: normal bold 20px 'serif' ");
         button1.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
-        button2.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
-        button3.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
 
         gridPane.setStyle("-fx-background-color: BEIGE;");
 
-        EventHandler<MouseEvent> eventHandlerHeroes = e -> SongUtilities.addHeroesScore();
+        EventHandler<MouseEvent> eventHandlerHeroes = e -> SongCupBuildLogic.runGame(stage);
         button1.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerHeroes);
-
-//        EventHandler<MouseEvent> eventHandlerRebel = e -> SongUtilities.addRebelScore();
-//        button2.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerRebel);
-
-        EventHandler<MouseEvent> eventHandlerNext = e -> SongCupBuildLogic.countAndCheck(stage);
-        button3.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerNext);
 
         Scene scene = new Scene(gridPane);
 
@@ -68,3 +54,4 @@ public class CheckedScene {
         stage.show();
     }
 }
+
