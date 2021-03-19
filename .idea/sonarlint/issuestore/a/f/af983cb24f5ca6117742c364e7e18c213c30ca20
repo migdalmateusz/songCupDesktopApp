@@ -1,0 +1,9 @@
+
+U	java:S106"9Replace this use of System.out or System.err by a logger.(ÖÊÊä8ÛÜ²ß„/
+n
+java:S1104"QMake score a static final constant or non-public and provide accessors if needed.(ÒÅœ¹8‡ö®ß„/
+H
+java:S1444"+Make this "public static score" field final(ÒÅœ¹8‡ö®ß„/
+V
+java:S1118":Add a private constructor to hide the implicit public one.(˜®38İĞ­ß„/
+X	java:S125"<This block of commented-out lines of code should be removed.(¥Šíı8’è¨ß„/

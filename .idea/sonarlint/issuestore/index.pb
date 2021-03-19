@@ -15,5 +15,7 @@ c
 3src/main/java/songcup/userinterface/FinalScene.java,a\5\a58dd0d024639fd681d87ad49133c066c6485e29
 e
 5src/main/java/songcup/userinterface/PrimaryScene.java,a\b\ab2bd4b012f60d87b7c2e5ae624ee559a41d5da6
-b
-2src/main/java/songcup/computationlogic/Scores.java,9\3\93b625da5203e4a47211bc15a531d0000090f152
+g
+7src/main/java/songcup/computationlogic/SongStorage.java,3\f\3f6fc54d85b9e7eb1c12b4847c3f8009723279a0
+i
+9src/main/java/songcup/computationlogic/SongUtilities.java,a\f\af983cb24f5ca6117742c364e7e18c213c30ca20

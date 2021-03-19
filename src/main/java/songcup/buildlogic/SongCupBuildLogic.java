@@ -7,6 +7,15 @@ import songcup.userinterface.FinalScene;
 
 public class SongCupBuildLogic {
 
+    private static int round = 0;
+
+    public static void increaseRound() {
+        round++;
+    }
+
+    public static int getRound() {
+        return round;
+    }
 
     public static void runGame(Stage stage) {
         new CheckedScene(stage);

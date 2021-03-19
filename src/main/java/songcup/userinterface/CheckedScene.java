@@ -20,6 +20,7 @@ public class CheckedScene {
 
     public CheckedScene(Stage stage) {
         this.stage = stage;
+        SongCupBuildLogic.increaseRound();
         initializeUserInterface();
     }
 
@@ -27,8 +28,8 @@ public class CheckedScene {
 
         Text text1 = new Text("Which song do you like more?");
 
-        Button button1 = new Button("Heroes");
-        Button button2 = new Button("Rebel Rebel");
+        Button button1 = addButton(SongCupBuildLogic.getRound());
+        Button button2 = addButton(SongCupBuildLogic.getRound()+1);
         Button button3 = new Button("NEXT");
 
         GridPane gridPane = new GridPane();
@@ -66,5 +67,9 @@ public class CheckedScene {
         stage.setScene(scene);
 
         stage.show();
+    }
+
+    private static Button addButton(int button) {
+        return new Button(SongUtilities.getSong(button));
     }
 }
