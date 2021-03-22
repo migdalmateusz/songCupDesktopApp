@@ -21,8 +21,6 @@ public class CheckedScene {
     public CheckedScene(Stage stage) {
         this.stage = stage;
         initializeUserInterface();
-        SongCupBuildLogic.increaseRound();
-        System.out.println(SongCupBuildLogic.getRound());
     }
 
     private void initializeUserInterface() {
@@ -52,10 +50,10 @@ public class CheckedScene {
 
         gridPane.setStyle("-fx-background-color: BEIGE;");
 
-        EventHandler<MouseEvent> eventHandlerHeroes = e -> SongUtilities.getSongOne().setPoint(1);
+        EventHandler<MouseEvent> eventHandlerHeroes = e -> SongUtilities.setPointOne();
         button1.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerHeroes);
 
-        EventHandler<MouseEvent> eventHandlerRebel = e -> SongUtilities.getSongTwo().setPoint(1);
+        EventHandler<MouseEvent> eventHandlerRebel = e -> SongUtilities.setPointTwo();
         button2.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerRebel);
 
         EventHandler<MouseEvent> eventHandlerNext = e -> SongCupBuildLogic.countAndCheck(stage);

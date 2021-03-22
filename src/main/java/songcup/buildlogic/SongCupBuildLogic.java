@@ -18,17 +18,16 @@ public class SongCupBuildLogic {
         return round;
     }
 
-    public static void runGame(Stage stage) {
-        new CheckedScene(stage);
-    }
-
     public static void countAndCheck(Stage stage) {
         if(round<2) {
             new CheckedScene(stage);
+            increaseRound();
         } else if (round==2) {
             SongStorage.setSongMap(SongUtilities.createNewMap());
             new CheckedScene(stage);
+            increaseRound();
         } else {
+            SongStorage.setSongMap(SongUtilities.createFinalMap());
             new FinalScene(stage);
         }
     }

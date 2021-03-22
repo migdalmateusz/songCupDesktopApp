@@ -42,7 +42,7 @@ public class PrimaryScene {
 
         gridPane.setStyle("-fx-background-color: BEIGE;");
 
-        EventHandler<MouseEvent> eventHandlerHeroes = e -> SongCupBuildLogic.runGame(stage);
+        EventHandler<MouseEvent> eventHandlerHeroes = e -> SongCupBuildLogic.countAndCheck(stage);
         button1.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerHeroes);
 
         Scene scene = new Scene(gridPane);

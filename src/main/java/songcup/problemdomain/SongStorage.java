@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SongStorage {
-    private static Map<Integer, Song> songMap = createMap();
+    private static Map<Integer, Song> songMap;
 
 
     public static Map<Integer, Song> createMap() {

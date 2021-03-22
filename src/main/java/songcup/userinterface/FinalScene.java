@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import songcup.computationlogic.SongUtilities;
 
 public class FinalScene {
     private final Stage stage;
@@ -21,7 +22,7 @@ public class FinalScene {
     private void initializeUserInterface() {
 
         Text text1 = new Text("Final song is");
-//        Text text2 = new Text(Scores.winnerChose());
+        Text text2 = new Text(SongUtilities.getSongOne().getTitle());
 
         GridPane gridPane = new GridPane();
 
@@ -31,10 +32,10 @@ public class FinalScene {
         gridPane.setHgap(5);
         gridPane.setAlignment(Pos.CENTER);
         gridPane.add(text1, 0, 0);
-//        gridPane.add(text2, 0, 1);
+        gridPane.add(text2, 0, 1);
 
         text1.setStyle("-fx-font: normal bold 20px 'serif' ");
-//        text2.setStyle("-fx-font: normal bold 20px 'serif' ");
+        text2.setStyle("-fx-font: normal bold 20px 'serif' ");
 
         gridPane.setStyle("-fx-background-color: BEIGE;");
 
