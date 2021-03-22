@@ -2,6 +2,7 @@ package songcup.buildlogic;
 
 import javafx.stage.Stage;
 import songcup.computationlogic.SongUtilities;
+import songcup.problemdomain.SongStorage;
 import songcup.userinterface.CheckedScene;
 import songcup.userinterface.FinalScene;
 
@@ -22,7 +23,10 @@ public class SongCupBuildLogic {
     }
 
     public static void countAndCheck(Stage stage) {
-        if(SongUtilities.getScore()<2) {
+        if(round<2) {
+            new CheckedScene(stage);
+        } else if (round==2) {
+            SongStorage.setSongMap(SongUtilities.createNewMap());
             new CheckedScene(stage);
         } else {
             new FinalScene(stage);

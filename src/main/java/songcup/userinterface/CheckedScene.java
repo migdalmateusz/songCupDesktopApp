@@ -20,16 +20,17 @@ public class CheckedScene {
 
     public CheckedScene(Stage stage) {
         this.stage = stage;
-        SongCupBuildLogic.increaseRound();
         initializeUserInterface();
+        SongCupBuildLogic.increaseRound();
+        System.out.println(SongCupBuildLogic.getRound());
     }
 
     private void initializeUserInterface() {
 
         Text text1 = new Text("Which song do you like more?");
 
-        Button button1 = addButton(SongCupBuildLogic.getRound());
-        Button button2 = addButton(SongCupBuildLogic.getRound()+1);
+        Button button1 = new Button(SongUtilities.getSongOne().getTitle());
+        Button button2 = new Button(SongUtilities.getSongTwo().getTitle());
         Button button3 = new Button("NEXT");
 
         GridPane gridPane = new GridPane();
@@ -51,11 +52,11 @@ public class CheckedScene {
 
         gridPane.setStyle("-fx-background-color: BEIGE;");
 
-        EventHandler<MouseEvent> eventHandlerHeroes = e -> SongUtilities.addHeroesScore();
+        EventHandler<MouseEvent> eventHandlerHeroes = e -> SongUtilities.getSongOne().setPoint(1);
         button1.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerHeroes);
 
-//        EventHandler<MouseEvent> eventHandlerRebel = e -> SongUtilities.addRebelScore();
-//        button2.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerRebel);
+        EventHandler<MouseEvent> eventHandlerRebel = e -> SongUtilities.getSongTwo().setPoint(1);
+        button2.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerRebel);
 
         EventHandler<MouseEvent> eventHandlerNext = e -> SongCupBuildLogic.countAndCheck(stage);
         button3.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerNext);
@@ -67,9 +68,5 @@ public class CheckedScene {
         stage.setScene(scene);
 
         stage.show();
-    }
-
-    private static Button addButton(int button) {
-        return new Button(SongUtilities.getSong(button));
     }
 }

@@ -1,4 +1,4 @@
 
 ò
-java:S11920"{Define a constant instead of duplicating this literal "-fx-background-color: darkslateblue; -fx-text-fill: white;" 3 times.(Î¡«û8÷ä››Ñ/
-]	java:S1259"<This block of commented-out lines of code should be removed.(•ˇÚ„ˇˇˇˇˇ8‚•´ﬂÑ/
+java:S11921"{Define a constant instead of duplicating this literal "-fx-background-color: darkslateblue; -fx-text-fill: white;" 3 times.(Î¡«û8÷ä››Ñ/
+U	java:S106"9Replace this use of System.out or System.err by a logger.(£œ¨Ω8©Üÿ≥Ö/
