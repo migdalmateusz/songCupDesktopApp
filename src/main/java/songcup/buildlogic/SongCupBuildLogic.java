@@ -8,27 +8,53 @@ import songcup.userinterface.FinalScene;
 
 public class SongCupBuildLogic {
 
+    private static int match = 0;
+    private static int allRounds = 0;
     private static int round = 0;
 
-    public static void increaseRound() {
-        round++;
+    public static int getMatch() {
+        return match;
+    }
+
+    public static int getAllRounds() {
+        return allRounds;
+    }
+
+    public static void setAllRounds(int allRounds) {
+        SongCupBuildLogic.allRounds = allRounds;
+    }
+
+    public static void increaseMatch() {
+        match++;
     }
 
     public static int getRound() {
         return round;
     }
 
+    public static void increaseRound() {
+        if (match == Math.pow(2, getAllRounds())) {
+            allRounds--;
+            round++;
+        }
+    }
+
     public static void countAndCheck(Stage stage) {
-        if(round<2) {
+        if (match < 4) {
             new CheckedScene(stage);
-            increaseRound();
-        } else if (round==2) {
+            increaseMatch();
+        } else if (match < 6) {
             SongStorage.setSongMap(SongUtilities.createNewMap());
             new CheckedScene(stage);
-            increaseRound();
+            increaseMatch();
+        } else if (match == 6) {
+            SongStorage.setSongMap(SongUtilities.createNewMap());
+            new CheckedScene(stage);
+            increaseMatch();
         } else {
             SongStorage.setSongMap(SongUtilities.createFinalMap());
             new FinalScene(stage);
         }
     }
 }
+

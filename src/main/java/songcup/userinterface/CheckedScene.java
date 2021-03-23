@@ -50,11 +50,11 @@ public class CheckedScene {
 
         gridPane.setStyle("-fx-background-color: BEIGE;");
 
-        EventHandler<MouseEvent> eventHandlerHeroes = e -> SongUtilities.setPointOne();
-        button1.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerHeroes);
+        EventHandler<MouseEvent> eventHandlerSongOne = e -> SongUtilities.setPointOne();
+        button1.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerSongOne);
 
-        EventHandler<MouseEvent> eventHandlerRebel = e -> SongUtilities.setPointTwo();
-        button2.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerRebel);
+        EventHandler<MouseEvent> eventHandlerSongTwo = e -> SongUtilities.setPointTwo();
+        button2.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerSongTwo);
 
         EventHandler<MouseEvent> eventHandlerNext = e -> SongCupBuildLogic.countAndCheck(stage);
         button3.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerNext);
