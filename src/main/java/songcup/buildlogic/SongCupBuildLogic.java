@@ -2,9 +2,12 @@ package songcup.buildlogic;
 
 import javafx.stage.Stage;
 import songcup.computationlogic.SongUtilities;
+import songcup.problemdomain.Song;
 import songcup.problemdomain.SongStorage;
 import songcup.userinterface.CheckedScene;
 import songcup.userinterface.FinalScene;
+
+import java.util.Map;
 
 public class SongCupBuildLogic {
 
@@ -43,12 +46,20 @@ public class SongCupBuildLogic {
         if (match < 4) {
             new CheckedScene(stage);
             increaseMatch();
+            for (Map.Entry<Integer, Song> entry : SongStorage.getSongMap().entrySet()) {
+                System.out.println(entry.getValue().getTitle());
+                System.out.println(entry.getValue().getPoint());
+            }
         } else if (match < 6) {
             SongStorage.setSongMap(SongUtilities.createNewMap());
             new CheckedScene(stage);
             increaseMatch();
+            for (Map.Entry<Integer, Song> entry : SongStorage.getSongMap().entrySet()) {
+                System.out.println(entry.getValue().getTitle());
+                System.out.println(entry.getValue().getPoint());
+            }
         } else if (match == 6) {
-            SongStorage.setSongMap(SongUtilities.createNewMap());
+            SongStorage.setSongMap(SongUtilities.createNewMap2());
             new CheckedScene(stage);
             increaseMatch();
         } else {

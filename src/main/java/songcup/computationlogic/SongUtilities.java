@@ -9,8 +9,8 @@ import java.util.Map;
 
 public class SongUtilities {
 
-    private static Map<Integer, Integer> mapForButtonOne = createMapForButtonOne();
-    private static Map<Integer, Integer> mapForButtonTwo = createMapForButtonTwo();
+    private static final Map<Integer, Integer> mapForButtonOne = createMapForButtonOne();
+    private static final Map<Integer, Integer> mapForButtonTwo = createMapForButtonTwo();
 
     public static Map<Integer, Integer> getMapForButtonOne() {
         return mapForButtonOne;
@@ -29,39 +29,13 @@ public class SongUtilities {
     }
 
     public static void setPointOne() {
-        if (SongCupBuildLogic.getMatch() == 1) {
-            SongStorage.getSongMap().get(1).setPoint(1);
-        } else if (SongCupBuildLogic.getMatch() == 2) {
-            SongStorage.getSongMap().get(3).setPoint(1);
-        } else if (SongCupBuildLogic.getMatch() == 3) {
-            SongStorage.getSongMap().get(5).setPoint(1);
-        } else if (SongCupBuildLogic.getMatch() == 4) {
-            SongStorage.getSongMap().get(7).setPoint(1);
-        } else if (SongCupBuildLogic.getMatch() == 5) {
-            SongStorage.getSongMap().get(1).setPoint(2);
-        } else if (SongCupBuildLogic.getMatch() == 6) {
-            SongStorage.getSongMap().get(3).setPoint(2);
-        } else {
-            SongStorage.getSongMap().get(1).setPoint(3);
-        }
+        SongStorage.getSongMap().get(getMapForButtonOne().get(SongCupBuildLogic.getMatch()-1))
+                .setPoint(SongStorage.getSongMap().get(getMapForButtonOne().get(SongCupBuildLogic.getMatch()-1)).getPoint()+1);
     }
 
     public static void setPointTwo() {
-        if (SongCupBuildLogic.getMatch() == 1) {
-            SongStorage.getSongMap().get(2).setPoint(1);
-        } else if (SongCupBuildLogic.getMatch() == 2) {
-            SongStorage.getSongMap().get(4).setPoint(1);
-        } else if (SongCupBuildLogic.getMatch() == 3) {
-            SongStorage.getSongMap().get(6).setPoint(1);
-        } else if (SongCupBuildLogic.getMatch() == 4) {
-            SongStorage.getSongMap().get(8).setPoint(1);
-        } else if (SongCupBuildLogic.getMatch() == 5) {
-            SongStorage.getSongMap().get(2).setPoint(2);
-        } else if (SongCupBuildLogic.getMatch() == 6) {
-            SongStorage.getSongMap().get(4).setPoint(2);
-        } else {
-            SongStorage.getSongMap().get(2).setPoint(3);
-        }
+        SongStorage.getSongMap().get(getMapForButtonTwo().get(SongCupBuildLogic.getMatch()-1))
+                .setPoint(SongStorage.getSongMap().get(getMapForButtonTwo().get(SongCupBuildLogic.getMatch()-1)).getPoint()+1);
     }
 
 
@@ -77,11 +51,23 @@ public class SongUtilities {
         return newSongMap;
     }
 
+    public static Map<Integer, Song> createNewMap2() {
+        Map<Integer, Song> newSongMap2 = new HashMap<>();
+        int id = 0;
+        for (Map.Entry<Integer, Song> entry : SongStorage.getSongMap().entrySet()) {
+            if (entry.getValue().getPoint() > 1) {
+                id++;
+                newSongMap2.put(id, entry.getValue());
+            }
+        }
+        return newSongMap2;
+    }
+
     public static Map<Integer, Song> createFinalMap() {
         Map<Integer, Song> newSongMap = new HashMap<>();
         int id = 0;
         for (Map.Entry<Integer, Song> entry : SongStorage.getSongMap().entrySet()) {
-            if (entry.getValue().getPoint() > 1) {
+            if (entry.getValue().getPoint() > 2) {
                 id++;
                 newSongMap.put(id, entry.getValue());
             }
