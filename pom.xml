@@ -25,17 +25,30 @@
             <artifactId>javafx-fxml</artifactId>
             <version>11</version>
         </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-web</artifactId>
+            <version>11</version>
+        </dependency>
     </dependencies>
 
     <build>
         <plugins>
+                <plugin>
+                    <groupId>org.openjfx</groupId>
+                    <artifactId>javafx-maven-plugin</artifactId>
+                    <version>0.0.5</version>
+                    <configuration>
+                        <mainClass>songcup.Main</mainClass>
+                    </configuration>
+                </plugin>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.3.0</version>
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>sudoku.Main</mainClass>
+                            <mainClass>songcup.Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>

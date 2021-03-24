@@ -1,5 +1,7 @@
 
+z
+java:S1450"XRemove the "allRounds" field and declare it as a local variable in the relevant methods.(óó–şùÿÿÿÿ8¾Ë›—†/
+O
+java:S1068"-Remove this unused "allRounds" private field.(óó–şùÿÿÿÿ8¾Ë›—†/
 W
-java:S1118	":Add a private constructor to hide the implicit public one.(‚Ëîç8û¾éÔ…/
-i
-java:S18712"LThis branch's code block is the same as the block for the branch on line 46.(‰Ô±8ŠÚÿı…/
+java:S1118	":Add a private constructor to hide the implicit public one.(‚Ëîç8Åû‘—†/

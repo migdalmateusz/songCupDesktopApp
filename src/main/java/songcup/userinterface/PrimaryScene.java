@@ -26,6 +26,7 @@ public class PrimaryScene {
         Text text1 = new Text("Do you wanna play?");
 
         Button button1 = new Button("OK");
+        Button button2 = new Button("Listen");
 
         GridPane gridPane = new GridPane();
 
@@ -36,14 +37,20 @@ public class PrimaryScene {
         gridPane.setAlignment(Pos.CENTER);
         gridPane.add(text1, 1, 0);
         gridPane.add(button1, 0, 1);
+        gridPane.add(button2, 0, 2);
+
 
         text1.setStyle("-fx-font: normal bold 20px 'serif' ");
         button1.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
+        button2.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
 
         gridPane.setStyle("-fx-background-color: BEIGE;");
 
-        EventHandler<MouseEvent> eventHandlerHeroes = e -> SongCupBuildLogic.countAndCheck(stage);
-        button1.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerHeroes);
+        EventHandler<MouseEvent> eventHandlerOk = e -> SongCupBuildLogic.countAndCheck(stage);
+        button1.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerOk);
+
+        EventHandler<MouseEvent> eventHandlerListen = e -> ListenScene.display();
+        button2.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerListen);
 
         Scene scene = new Scene(gridPane);
 

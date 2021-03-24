@@ -19,3 +19,7 @@ i
 9src/main/java/songcup/computationlogic/SongUtilities.java,a\f\af983cb24f5ca6117742c364e7e18c213c30ca20
 d
 4src/main/java/songcup/problemdomain/SongStorage.java,6\a\6afd150bf38a518ab9854c80bfeab77565d30cd4
+d
+4src/main/java/songcup/userinterface/ListenScene.java,8\5\854f99c8edf98fa20f5aceca1ec0632af5b97c1b
+R
+"src/main/java/songcup/testing.java,5\4\5460bf0773941c85e140a2faef66b9d483a07ce4

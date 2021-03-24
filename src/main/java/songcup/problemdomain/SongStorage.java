@@ -29,10 +29,6 @@ public class SongStorage {
         return mapSong;
     }
 
-    public static Song getSong(int a) {
-        return songMap.get(a);
-    }
-
     public static Map<Integer, Song> getSongMap() {
         return songMap;
     }
