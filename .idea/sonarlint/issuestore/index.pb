@@ -23,3 +23,5 @@ d
 4src/main/java/songcup/userinterface/ListenScene.java,8\5\854f99c8edf98fa20f5aceca1ec0632af5b97c1b
 E
 songCupDesktopApp.iml,a\9\a9c183e4f7bc1607926026be2b897b0d46722abc
+n
+>src/main/java/songcup/spotifyapi/ClientCredentialsExample.java,e\2\e28a73d483cf644335defa5ba363859b904840b0
