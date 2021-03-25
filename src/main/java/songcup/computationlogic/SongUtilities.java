@@ -20,12 +20,20 @@ public class SongUtilities {
         return mapForButtonTwo;
     }
 
-    public static Song getSongOne() {
-        return SongStorage.getSongMap().get(getMapForButtonOne().get(SongCupBuildLogic.getMatch()));
+    public static String getTitleSongOne() {
+        return SongStorage.getSongMap().get(getMapForButtonOne().get(SongCupBuildLogic.getMatch())).getTitle();
     }
 
-    public static Song getSongTwo() {
-        return SongStorage.getSongMap().get(getMapForButtonTwo().get(SongCupBuildLogic.getMatch()));
+    public static String getTitleSongTwo() {
+        return SongStorage.getSongMap().get(getMapForButtonTwo().get(SongCupBuildLogic.getMatch())).getTitle();
+    }
+
+    public static String getVideoSongOne() {
+        return SongStorage.getSongMap().get(getMapForButtonOne().get(SongCupBuildLogic.getMatch()-1)).getVideo();
+    }
+
+    public static String getVideoSongTwo() {
+        return SongStorage.getSongMap().get(getMapForButtonTwo().get(SongCupBuildLogic.getMatch()-1)).getVideo();
     }
 
     public static void setPointOne() {

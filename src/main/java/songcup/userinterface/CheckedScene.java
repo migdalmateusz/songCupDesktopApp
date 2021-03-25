@@ -27,9 +27,11 @@ public class CheckedScene {
 
         Text text1 = new Text("Which song do you like more?");
 
-        Button button1 = new Button(SongUtilities.getSongOne().getTitle());
-        Button button2 = new Button(SongUtilities.getSongTwo().getTitle());
+        Button button1 = new Button(SongUtilities.getTitleSongOne());
+        Button button2 = new Button(SongUtilities.getTitleSongTwo());
         Button button3 = new Button("NEXT");
+        Button button4 = new Button("Listen");
+        Button button5 = new Button("Listen");
 
         GridPane gridPane = new GridPane();
 
@@ -41,12 +43,16 @@ public class CheckedScene {
         gridPane.add(text1, 1, 0);
         gridPane.add(button1, 0, 1);
         gridPane.add(button2, 3, 1);
-        gridPane.add(button3, 2, 2);
+        gridPane.add(button3, 2, 3);
+        gridPane.add(button4, 0, 2);
+        gridPane.add(button5, 3, 2);
 
         text1.setStyle("-fx-font: normal bold 20px 'serif' ");
         button1.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
         button2.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
         button3.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
+        button4.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
+        button5.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
 
         gridPane.setStyle("-fx-background-color: BEIGE;");
 
@@ -55,6 +61,12 @@ public class CheckedScene {
 
         EventHandler<MouseEvent> eventHandlerSongTwo = e -> SongUtilities.setPointTwo();
         button2.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerSongTwo);
+
+        EventHandler<MouseEvent> eventHandlerListenSongOne = e -> ListenScene.display(SongUtilities.getVideoSongOne());
+        button4.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerListenSongOne);
+
+        EventHandler<MouseEvent> eventHandlerListenSongTwo = e -> ListenScene.display(SongUtilities.getVideoSongTwo());
+        button5.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerListenSongTwo);
 
         EventHandler<MouseEvent> eventHandlerNext = e -> SongCupBuildLogic.countAndCheck(stage);
         button3.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerNext);

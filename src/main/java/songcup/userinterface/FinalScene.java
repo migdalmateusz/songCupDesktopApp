@@ -22,7 +22,7 @@ public class FinalScene {
     private void initializeUserInterface() {
 
         Text text1 = new Text("Final song is");
-        Text text2 = new Text(SongUtilities.getSongOne().getTitle());
+        Text text2 = new Text(SongUtilities.getTitleSongOne());
 
         GridPane gridPane = new GridPane();
 

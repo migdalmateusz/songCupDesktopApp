@@ -9,14 +9,14 @@ public class SongStorage {
 
     public static Map<Integer, Song> createMap() {
         Map<Integer, Song> mapSong = new HashMap<>();
-        Song heroes = new Song("Heroes", 0);
-        Song rebel = new Song("Rebel Rebel", 0);
-        Song starman = new Song("Starman", 0);
-        Song oddity = new Song("Space Oddity", 0);
-        Song changes = new Song("Changes", 0);
-        Song ladyStardust = new Song("Lady stardust", 0);
-        Song warszawa = new Song("Warszaw", 0);
-        Song ashesToAshes = new Song("Ashes to Ashes", 0);
+        Song heroes = new Song("Heroes", 0, "https://www.youtube.com/watch?v=lXgkuM2NhYI");
+        Song rebel = new Song("Rebel Rebel", 0, "https://www.youtube.com/watch?v=Vy-rvsHsi1o");
+        Song starman = new Song("Starman", 0, "https://www.youtube.com/watch?v=sI66hcu9fIs");
+        Song oddity = new Song("Space Oddity", 0, "https://www.youtube.com/watch?v=iYYRH4apXDo");
+        Song changes = new Song("Changes", 0, "https://www.youtube.com/watch?v=xMQ0Ryy01yE");
+        Song ladyStardust = new Song("Lady stardust", 0, "https://www.youtube.com/watch?v=iARDYHakmC0");
+        Song warszawa = new Song("Warszaw", 0, "https://www.youtube.com/watch?v=qpL1IokHH5Y");
+        Song ashesToAshes = new Song("Ashes to Ashes", 0, "https://www.youtube.com/watch?v=HyMm4rJemtI");
         mapSong.put(1, heroes);
         mapSong.put(2, rebel);
         mapSong.put(3, starman);
