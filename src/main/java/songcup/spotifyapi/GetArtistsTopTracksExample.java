@@ -10,7 +10,7 @@ import org.apache.hc.core5.http.ParseException;
 import java.io.IOException;
 
 public class GetArtistsTopTracksExample {
-    private static final String accessToken = "BQDPshAg1M18q0hKp25IjfUnOWwndntAd6noGJ-r1QDHIGW8uinD-C64xyJv8KnDuGbUJLbrvhLdntjgQPDqXr2AvbhTXeDPUW4qYfnikYNs_O3hjJ1iRo2Tfy3Jkb4-_OHQe5T5a8DUO0RXGVJIK8QN";
+    private static final String accessToken = "BQBGqzoKJ10T4MndxcD_ym0Po9bA2_w5nyIaNztCHyjcjI-4KoQKadXyzOBCIUd6OmfUuVAjnLgspg1BTi_PnZJOB__yrYN42evA_Y8zHCqhDt-DzUImDeU104YlkwioPYL60NBTzkTNVyIunUBc-zjiZjRc-_oTuzI";
     private static final String id = "0oSGxfWSnnOXhD2fKuz2Gy";
     private static final CountryCode countryCode = CountryCode.PL;
 
@@ -21,17 +21,21 @@ public class GetArtistsTopTracksExample {
             .getArtistsTopTracks(id, countryCode)
             .build();
 
-    public static void getArtistsTopTracks_Sync() {
+    public static Track[] getArtistsTopTracks_Sync() {
+        Track[] tracks = null;
         try {
-            final Track[] tracks = getArtistsTopTracksRequest.execute();
+            tracks = getArtistsTopTracksRequest.execute();
 
-            System.out.println("Length: " + tracks.length);
         } catch (IOException | SpotifyWebApiException | ParseException e) {
             System.out.println("Error: " + e.getMessage());
         }
+        return tracks;
     }
 
     public static void main(String[] args) {
-        getArtistsTopTracks_Sync();
+        Track [] tracks = getArtistsTopTracks_Sync();
+        for (Track track : tracks) {
+            System.out.println(track);
+        }
     }
 }

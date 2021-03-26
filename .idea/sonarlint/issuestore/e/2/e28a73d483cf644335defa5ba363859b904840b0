@@ -1,6 +1,4 @@
 
-{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ØÜ§ÿÿÿÿÿ8ÏÏÄÁ†/
-{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¸ñøüùÿÿÿÿ8ÅÇÑÁ†/
-j	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ìï§Ö8ÅÇÑÁ†/
-U	java:S106"9Replace this use of System.out or System.err by a logger.(ÇÑ‚8ÅÇÑÁ†/
-U	java:S106"9Replace this use of System.out or System.err by a logger.(äìÎÆ8ÅÇÑÁ†/
+7
+java:S1220""Move this file to a named package.8Øò±Î†/
+]	java:S125"<This block of commented-out lines of code should be removed.(ã¡õÙüÿÿÿÿ8Øò±Î†/

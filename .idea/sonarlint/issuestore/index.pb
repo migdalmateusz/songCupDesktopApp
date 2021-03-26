@@ -25,3 +25,11 @@ E
 songCupDesktopApp.iml,a\9\a9c183e4f7bc1607926026be2b897b0d46722abc
 n
 >src/main/java/songcup/spotifyapi/ClientCredentialsExample.java,e\2\e28a73d483cf644335defa5ba363859b904840b0
+^
+.src/main/java/songcup/spotifyapi/PkceUtil.java,c\2\c2caad2688f7a23ac05506b6db3696b3135963e9
+p
+@src/main/java/songcup/spotifyapi/GetArtistsTopTracksExample.java,8\5\8567c71a34c20ceac71a0949f8a5826f5570b13b
+u
+Esrc/main/java/songcup/spotifyapi/AuthorizationCodePKCEUriExample.java,a\1\a1b33e6527bfb87a2747cb8e925a97cf75b26b8d
+r
+Bsrc/main/java/songcup/spotifyapi/AuthorizationCodePKCEExample.java,9\b\9bb799468ec63b97dbb5c457ae33cc1b24b6aa8e
