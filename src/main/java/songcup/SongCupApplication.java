@@ -13,7 +13,6 @@ public class SongCupApplication extends Application {
     @Override
     public void start(Stage primaryStage) {
 
-        Track[] tracks = GetArtistsTopTracksExample.getArtistsTopTracks_Sync();
         SongStorage.setSongMap(SongStorage.createMap());
         SongCupBuildLogic.setAllRounds(SongStorage.getNumberOfRounds(SongStorage.getSongMap()));
         new PrimaryScene(primaryStage);

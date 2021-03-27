@@ -32,8 +32,4 @@ public class GetArtistsTopTracksExample {
         }
         return tracks;
     }
-
-    public static void main(String[] args) {
-
-    }
 }

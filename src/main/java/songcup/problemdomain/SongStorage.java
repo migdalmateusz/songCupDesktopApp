@@ -3,29 +3,25 @@ package songcup.problemdomain;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.wrapper.spotify.model_objects.specification.Track;
+import songcup.spotifyapi.GetArtistsTopTracksExample;
+
 public class SongStorage {
+
     private static Map<Integer, Song> songMap;
 
+    private static Track[] tracks = GetArtistsTopTracksExample.getArtistsTopTracks_Sync();
 
     public static Map<Integer, Song> createMap() {
+        Song[] mySongs = new Song[8];
+        for (int i = 0; i < 8; i++) {
+            String[] titles = tracks[i].getName().split("-");
+            mySongs[i] = new Song(titles[0], 0, "video");
+        }
         Map<Integer, Song> mapSong = new HashMap<>();
-        Song heroes = new Song("Heroes", 0, "https://www.youtube.com/watch?v=lXgkuM2NhYI");
-        Song rebel = new Song("Rebel Rebel", 0, "https://www.youtube.com/watch?v=Vy-rvsHsi1o");
-        Song starman = new Song("Starman", 0, "https://www.youtube.com/watch?v=sI66hcu9fIs");
-        Song oddity = new Song("Space Oddity", 0, "https://www.youtube.com/watch?v=iYYRH4apXDo");
-        Song changes = new Song("Changes", 0, "https://www.youtube.com/watch?v=xMQ0Ryy01yE");
-        Song ladyStardust = new Song("Lady stardust", 0, "https://www.youtube.com/watch?v=iARDYHakmC0");
-        Song warszawa = new Song("Warszaw", 0, "https://www.youtube.com/watch?v=qpL1IokHH5Y");
-        Song ashesToAshes = new Song("Ashes to Ashes", 0, "https://www.youtube.com/watch?v=HyMm4rJemtI");
-        mapSong.put(1, heroes);
-        mapSong.put(2, rebel);
-        mapSong.put(3, starman);
-        mapSong.put(4, oddity);
-        mapSong.put(5, changes);
-        mapSong.put(6, ladyStardust);
-        mapSong.put(7, warszawa);
-        mapSong.put(8, ashesToAshes);
-
+        for (int i = 1; i < 9; i++) {
+            mapSong.put(i, mySongs[i - 1]);
+        }
         return mapSong;
     }
 
@@ -42,7 +38,7 @@ public class SongStorage {
         int numberOfRounds = 0;
         while (size > 2) {
             numberOfRounds++;
-            size = size/2;
+            size = size / 2;
         }
         return numberOfRounds;
     }
