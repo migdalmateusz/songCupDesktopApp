@@ -10,9 +10,10 @@ import org.apache.hc.core5.http.ParseException;
 import java.io.IOException;
 
 public class GetArtistsTopTracksExample {
-    private static final String accessToken = "BQBGqzoKJ10T4MndxcD_ym0Po9bA2_w5nyIaNztCHyjcjI-4KoQKadXyzOBCIUd6OmfUuVAjnLgspg1BTi_PnZJOB__yrYN42evA_Y8zHCqhDt-DzUImDeU104YlkwioPYL60NBTzkTNVyIunUBc-zjiZjRc-_oTuzI";
+    private static String accessToken = ClientCredentialsExample.clientCredentials_Sync();
     private static final String id = "0oSGxfWSnnOXhD2fKuz2Gy";
     private static final CountryCode countryCode = CountryCode.PL;
+
 
     private static final SpotifyApi spotifyApi = new SpotifyApi.Builder()
             .setAccessToken(accessToken)
@@ -33,9 +34,6 @@ public class GetArtistsTopTracksExample {
     }
 
     public static void main(String[] args) {
-        Track [] tracks = getArtistsTopTracks_Sync();
-        for (Track track : tracks) {
-            System.out.println(track);
-        }
+
     }
 }
