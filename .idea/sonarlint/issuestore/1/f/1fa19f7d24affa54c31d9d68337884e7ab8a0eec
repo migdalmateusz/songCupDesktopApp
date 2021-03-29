@@ -1,5 +1,4 @@
 
-˜
-java:S11929"{Define a constant instead of duplicating this literal "-fx-background-color: darkslateblue; -fx-text-fill: white;" 5 times.(ëÁÇž8¨¸«ê‡/
-[
-java:S1128">Remove this unused import 'songcup.problemdomain.SongStorage'.(­Ëñ£8º˜¬ê‡/
+X	java:S125"<This block of commented-out lines of code should be removed.(ó®Ô„8Î“áñ‡/
+7
+java:S1220""Move this file to a named package.8Î“áñ‡/

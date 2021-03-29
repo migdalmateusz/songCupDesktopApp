@@ -23,3 +23,7 @@ E
 songCupDesktopApp.iml,a\9\a9c183e4f7bc1607926026be2b897b0d46722abc
 p
 @src/main/java/songcup/spotifyapi/GetArtistsTopTracksExample.java,8\5\8567c71a34c20ceac71a0949f8a5826f5570b13b
+h
+8src/main/java/songcup/userinterface/SelectionWindow.java,c\a\caa59185ab091c17a70fe91c6604429e8fd95039
+c
+3src/main/java/songcup/userinterface/OpenWindow.java,b\1\b1c91ca2f9294d479a2a2d2ff30967511ac7ab74

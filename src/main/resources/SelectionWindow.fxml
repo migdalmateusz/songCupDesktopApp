@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.Pane?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="songcup.userinterface.SelectionWindow">
+   <children>
+      <Button fx:id="buttonSongOne" onAction="#addPointSongOne" layoutX="162.0" layoutY="207.0" mnemonicParsing="false" text="Button" />
+      <Button fx:id="buttonSongTwo" onAction="#addPointSongTwo" layoutX="458.0" layoutY="207.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="162.0" layoutY="304.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="458.0" layoutY="304.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="324.0" layoutY="448.0" mnemonicParsing="false" text="Button" />
+   </children>
+</Pane>

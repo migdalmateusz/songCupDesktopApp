@@ -1,10 +1,12 @@
 package songcup.buildlogic;
 
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 import songcup.computationlogic.SongUtilities;
 import songcup.problemdomain.SongStorage;
-import songcup.userinterface.CheckedScene;
+//import songcup.userinterface.CheckedScene;
 import songcup.userinterface.FinalScene;
+import songcup.userinterface.SelectionWindow;
 
 public class SongCupBuildLogic {
 
@@ -24,21 +26,21 @@ public class SongCupBuildLogic {
     }
 
 
-    public static void countAndCheck(Stage stage) {
+    public static void countAndCheck(Stage primaryStage) {
         if (match < 4) {
-            new CheckedScene(stage);
+            primaryStage.setScene(new SelectionWindow().setSelectionWindowScene());
             increaseMatch();
         } else if (match < 6) {
             SongStorage.setSongMap(SongUtilities.createNewMap());
-            new CheckedScene(stage);
+            new SelectionWindow().setSelectionWindowScene();
             increaseMatch();
         } else if (match == 6) {
             SongStorage.setSongMap(SongUtilities.createNewMap2());
-            new CheckedScene(stage);
+            new SelectionWindow().setSelectionWindowScene();
             increaseMatch();
         } else {
             SongStorage.setSongMap(SongUtilities.createFinalMap());
-            new FinalScene(stage);
+//            new FinalScene(stage);
         }
     }
 }
