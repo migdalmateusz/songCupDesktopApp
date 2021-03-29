@@ -11,6 +11,12 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import songcup.buildlogic.SongCupBuildLogic;
 import songcup.computationlogic.SongUtilities;
+import songcup.problemdomain.SongStorage;
+
+import java.awt.*;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 public class CheckedScene {
 
@@ -62,10 +68,22 @@ public class CheckedScene {
         EventHandler<MouseEvent> eventHandlerSongTwo = e -> SongUtilities.setPointTwo();
         button2.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerSongTwo);
 
-        EventHandler<MouseEvent> eventHandlerListenSongOne = e -> ListenScene.display(SongUtilities.getVideoSongOne());
+        EventHandler<MouseEvent> eventHandlerListenSongOne = e -> {
+            try {
+                Desktop.getDesktop().browse(new URI(SongUtilities.getVideoSongOne()));
+            } catch (IOException | URISyntaxException ioException) {
+                ioException.printStackTrace();
+            }
+        };
         button4.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerListenSongOne);
 
-        EventHandler<MouseEvent> eventHandlerListenSongTwo = e -> ListenScene.display(SongUtilities.getVideoSongTwo());
+        EventHandler<MouseEvent> eventHandlerListenSongTwo = e -> {
+            try {
+                Desktop.getDesktop().browse(new URI(SongUtilities.getVideoSongTwo()));
+            } catch (IOException | URISyntaxException ioException) {
+                ioException.printStackTrace();
+            }
+        };
         button5.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandlerListenSongTwo);
 
         EventHandler<MouseEvent> eventHandlerNext = e -> SongCupBuildLogic.countAndCheck(stage);
