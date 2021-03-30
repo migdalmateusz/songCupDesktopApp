@@ -1,6 +1,5 @@
 package songcup.userinterface;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -58,13 +57,14 @@ public class SelectionWindow {
 
     @FXML
     private void listenSongTwo() throws URISyntaxException, IOException {
-        Desktop.getDesktop().browse(new URI(SongUtilities.getVideoSongOne()));
+        Desktop.getDesktop().browse(new URI(SongUtilities.getVideoSongTwo()));
     }
 
     @FXML
     private void changeToNextWindow() {
         if (SongCupBuildLogic.getMatch()==6) {
             try {
+                SongUtilities.addPlaylist(2);
                 SongStorage.setSongMap(SongUtilities.createFinalMap());
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/FinalWindow.fxml"));
                 Parent parent = loader.load();

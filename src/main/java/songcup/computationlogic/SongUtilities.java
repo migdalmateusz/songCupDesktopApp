@@ -4,13 +4,13 @@ import songcup.buildlogic.SongCupBuildLogic;
 import songcup.problemdomain.Song;
 import songcup.problemdomain.SongStorage;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class SongUtilities {
 
     private static final Map<Integer, Integer> mapForButtonOne = createMapForButtonOne();
     private static final Map<Integer, Integer> mapForButtonTwo = createMapForButtonTwo();
+    private static final List<Song> playlist = new ArrayList<Song>();
 
     public static Map<Integer, Integer> getMapForButtonOne() {
         return mapForButtonOne;
@@ -113,4 +113,21 @@ public class SongUtilities {
         return mapForButtonTwo;
     }
 
+    public static void addPlaylist (int point) {
+        for (Map.Entry<Integer, Song> entry : SongStorage.getSongMap().entrySet()) {
+            if (entry.getValue().getPoint() == point) {
+                playlist.add(entry.getValue());
+            }
+        }
+    }
+
+    public static StringBuilder showPlaylist () {
+        playlist.sort(Comparator.comparing(Song::getPoint).reversed());
+        StringBuilder sB = new StringBuilder();
+        for (Song entry : playlist) {
+            sB.append(entry.getTitle());
+            sB.append("\n");
+        }
+        return sB;
+    }
 }

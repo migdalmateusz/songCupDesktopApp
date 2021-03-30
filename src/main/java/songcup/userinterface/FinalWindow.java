@@ -11,7 +11,7 @@ public class FinalWindow {
 
     @FXML
     private void initialize(){
-        winner.setText(SongUtilities.getTitleSongOne());
+        winner.setText(SongUtilities.getTitleSongOne() + "\n" + SongUtilities.showPlaylist());
     }
 
 }

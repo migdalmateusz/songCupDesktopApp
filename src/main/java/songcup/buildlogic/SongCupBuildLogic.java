@@ -17,8 +17,10 @@ public class SongCupBuildLogic {
 
     public static void countAndCheck() {
         if (match == 4) {
+            SongUtilities.addPlaylist(0);
             SongStorage.setSongMap(SongUtilities.createNewMap());
         } else if (match == 6) {
+            SongUtilities.addPlaylist(1);
             SongStorage.setSongMap(SongUtilities.createNewMap2());
         }
     }
