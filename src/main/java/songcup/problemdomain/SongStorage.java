@@ -34,15 +34,4 @@ public class SongStorage {
     public static void setSongMap(Map<Integer, Song> songMap) {
         SongStorage.songMap = songMap;
     }
-
-    public static int getNumberOfRounds(Map<Integer, Song> map) {
-        int size = map.size();
-        int numberOfRounds = 0;
-        while (size > 2) {
-            numberOfRounds++;
-            size = size / 2;
-        }
-        return numberOfRounds;
-    }
-
 }

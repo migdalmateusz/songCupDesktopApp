@@ -37,13 +37,13 @@ public class SongUtilities {
     }
 
     public static void setPointOne() {
-        SongStorage.getSongMap().get(getMapForButtonOne().get(SongCupBuildLogic.getMatch()-1))
-                .setPoint(SongStorage.getSongMap().get(getMapForButtonOne().get(SongCupBuildLogic.getMatch()-1)).getPoint()+1);
+        SongStorage.getSongMap().get(getMapForButtonOne().get(SongCupBuildLogic.getMatch()))
+                .setPoint(SongStorage.getSongMap().get(getMapForButtonOne().get(SongCupBuildLogic.getMatch())).getPoint()+1);
     }
 
     public static void setPointTwo() {
-        SongStorage.getSongMap().get(getMapForButtonTwo().get(SongCupBuildLogic.getMatch()-1))
-                .setPoint(SongStorage.getSongMap().get(getMapForButtonTwo().get(SongCupBuildLogic.getMatch()-1)).getPoint()+1);
+        SongStorage.getSongMap().get(getMapForButtonTwo().get(SongCupBuildLogic.getMatch()))
+                .setPoint(SongStorage.getSongMap().get(getMapForButtonTwo().get(SongCupBuildLogic.getMatch())).getPoint()+1);
     }
 
 

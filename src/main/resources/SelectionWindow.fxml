@@ -10,6 +10,6 @@
       <Button fx:id="buttonSongTwo" onAction="#addPointSongTwo" layoutX="458.0" layoutY="207.0" mnemonicParsing="false" text="Button" />
       <Button layoutX="162.0" layoutY="304.0" mnemonicParsing="false" text="Button" />
       <Button layoutX="458.0" layoutY="304.0" mnemonicParsing="false" text="Button" />
-      <Button layoutX="324.0" layoutY="448.0" mnemonicParsing="false" text="Button" />
+      <Button fx:id="buttonNext" onAction="#changeToNextWindow" layoutX="324.0" layoutY="448.0" mnemonicParsing="false" text="Next" />
    </children>
 </Pane>

@@ -27,3 +27,7 @@ h
 8src/main/java/songcup/userinterface/SelectionWindow.java,c\a\caa59185ab091c17a70fe91c6604429e8fd95039
 c
 3src/main/java/songcup/userinterface/OpenWindow.java,b\1\b1c91ca2f9294d479a2a2d2ff30967511ac7ab74
+n
+>src/main/java/songcup/spotifyapi/ClientCredentialsExample.java,e\2\e28a73d483cf644335defa5ba363859b904840b0
+d
+4src/main/java/songcup/userinterface/FinalWindow.java,7\1\715ca75324dfedc0d96462256d68e7116f129354

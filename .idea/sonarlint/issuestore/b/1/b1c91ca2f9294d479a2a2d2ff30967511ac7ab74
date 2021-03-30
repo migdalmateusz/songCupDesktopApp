@@ -1,4 +1,3 @@
 
-n
-java:S1104"QMake stage a static final constant or non-public and provide accessors if needed.( úàÂ8Å¥Êó‡/
-]	java:S125"<This block of commented-out lines of code should be removed.(¤à£·şÿÿÿÿ8—ŒÎó‡/
+£
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(÷‹¾†ÿÿÿÿÿ8¡³‡ù‡/

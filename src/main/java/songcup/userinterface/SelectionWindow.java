@@ -6,10 +6,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import songcup.buildlogic.SongCupBuildLogic;
 import songcup.computationlogic.SongUtilities;
+import songcup.problemdomain.SongStorage;
 
 import java.io.IOException;
 
@@ -22,45 +22,47 @@ public class SelectionWindow {
     private Button buttonSongTwo;
 
     @FXML
+    private Button buttonNext;
+
+    @FXML
     void initialize() {
+        SongCupBuildLogic.countAndCheck();
         buttonSongOne.setText(SongUtilities.getTitleSongOne());
         buttonSongTwo.setText(SongUtilities.getTitleSongTwo());
     }
 
     @FXML
     private void addPointSongOne(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/SelectionWindow.fxml"));
-            Parent parent = loader.load();
-            SongCupBuildLogic.increaseMatch();
-            ((Stage)buttonSongOne.getScene().getWindow()).setScene(new Scene(parent, 700, 700));
-        } catch (IOException eox) {
-            eox.printStackTrace();
-        }
+        SongUtilities.setPointOne();
     }
 
     @FXML
     private void addPointSongTwo(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/SelectionWindow.fxml"));
-            Parent parent = loader.load();
-            SongCupBuildLogic.increaseMatch();
-            ((Stage)buttonSongTwo.getScene().getWindow()).setScene(new Scene(parent, 700, 700));
-        } catch (IOException eox) {
-            eox.printStackTrace();
-        }
+        SongUtilities.setPointTwo();
     }
 
+    @FXML
+    private void changeToNextWindow(ActionEvent event) {
+        if (SongCupBuildLogic.getMatch()==6) {
+            try {
+                SongStorage.setSongMap(SongUtilities.createFinalMap());
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/FinalWindow.fxml"));
+                Parent parent = loader.load();
+                ((Stage) buttonNext.getScene().getWindow()).setScene(new Scene(parent, 700, 700));
 
-    public Scene setSelectionWindowScene() {
-        FXMLLoader loader = new FXMLLoader(OpenWindow.class.getResource("/SelectionWindow.fxml"));
-        buttonSongOne.setText(SongUtilities.getTitleSongOne());
-        Pane pane = null;
-        try {
-            pane = loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
+            } catch (IOException eox) {
+                eox.printStackTrace();
+            }
+        } else {
+            try {
+                SongCupBuildLogic.increaseMatch();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/SelectionWindow.fxml"));
+                Parent parent = loader.load();
+                ((Stage) buttonNext.getScene().getWindow()).setScene(new Scene(parent, 700, 700));
+
+            } catch (IOException eox) {
+                eox.printStackTrace();
+            }
         }
-        return new Scene(pane);
     }
 }
