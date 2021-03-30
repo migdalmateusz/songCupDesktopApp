@@ -6,23 +6,45 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import songcup.problemdomain.SongStorage;
 
 import java.io.IOException;
 
 public class OpenWindow {
 
+    private static String artistId;
+
+    public static String getArtistId() {
+        return artistId;
+    }
+
     @FXML
     private Button button;
+
+    @FXML
+    private TextField enterArtist;
 
     @FXML
     void initialize() {
     }
 
     @FXML
+    private void setArtist(ActionEvent event) {
+    }
+
+    @FXML
+    private void checkArtist(ActionEvent event) {
+        String[] artistIdTable = enterArtist.getText().split(":") ;
+        artistId = artistIdTable[2];
+    }
+
+    @FXML
     private void changeScene(ActionEvent event) {
         try {
+            SongStorage.setSongMap(SongStorage.createMap());
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/SelectionWindow.fxml"));
             Parent parent = loader.load();
             ((Stage)button.getScene().getWindow()).setScene(new Scene(parent, 700, 700));

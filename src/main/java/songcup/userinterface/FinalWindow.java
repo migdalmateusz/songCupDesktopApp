@@ -14,5 +14,4 @@ public class FinalWindow {
         winner.setText(SongUtilities.getTitleSongOne());
     }
 
-
 }

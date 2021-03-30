@@ -9,12 +9,6 @@ O
 src/main/java/songcup/Main.java,5\3\537d3157d7d8931775b5daa7812bdd99d3277319
 ]
 -src/main/java/songcup/problemdomain/Song.java,0\5\059ff3bd9571838569dc790c37d1e0e297705653
-e
-5src/main/java/songcup/userinterface/CheckedScene.java,1\f\1fa19f7d24affa54c31d9d68337884e7ab8a0eec
-c
-3src/main/java/songcup/userinterface/FinalScene.java,a\5\a58dd0d024639fd681d87ad49133c066c6485e29
-e
-5src/main/java/songcup/userinterface/PrimaryScene.java,a\b\ab2bd4b012f60d87b7c2e5ae624ee559a41d5da6
 i
 9src/main/java/songcup/computationlogic/SongUtilities.java,a\f\af983cb24f5ca6117742c364e7e18c213c30ca20
 d
