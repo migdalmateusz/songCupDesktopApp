@@ -29,11 +29,11 @@ public class SongUtilities {
     }
 
     public static String getVideoSongOne() {
-        return SongStorage.getSongMap().get(getMapForButtonOne().get(SongCupBuildLogic.getMatch()-1)).getVideo();
+        return SongStorage.getSongMap().get(getMapForButtonOne().get(SongCupBuildLogic.getMatch())).getVideo();
     }
 
     public static String getVideoSongTwo() {
-        return SongStorage.getSongMap().get(getMapForButtonTwo().get(SongCupBuildLogic.getMatch()-1)).getVideo();
+        return SongStorage.getSongMap().get(getMapForButtonTwo().get(SongCupBuildLogic.getMatch())).getVideo();
     }
 
     public static void setPointOne() {

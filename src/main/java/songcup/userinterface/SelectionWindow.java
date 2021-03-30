@@ -11,9 +11,18 @@ import songcup.buildlogic.SongCupBuildLogic;
 import songcup.computationlogic.SongUtilities;
 import songcup.problemdomain.SongStorage;
 
+import java.awt.*;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 public class SelectionWindow {
+
+    @FXML
+    public Button listenSongOne;
+
+    @FXML
+    public Button listenSongTwo;
 
     @FXML
     private Button buttonSongOne;
@@ -24,6 +33,7 @@ public class SelectionWindow {
     @FXML
     private Button buttonNext;
 
+
     @FXML
     void initialize() {
         SongCupBuildLogic.countAndCheck();
@@ -32,17 +42,27 @@ public class SelectionWindow {
     }
 
     @FXML
-    private void addPointSongOne(ActionEvent event) {
+    private void addPointSongOne() {
         SongUtilities.setPointOne();
     }
 
     @FXML
-    private void addPointSongTwo(ActionEvent event) {
+    private void addPointSongTwo() {
         SongUtilities.setPointTwo();
     }
 
     @FXML
-    private void changeToNextWindow(ActionEvent event) {
+    private void listenSongOne() throws URISyntaxException, IOException {
+        Desktop.getDesktop().browse(new URI(SongUtilities.getVideoSongOne()));
+    }
+
+    @FXML
+    private void listenSongTwo() throws URISyntaxException, IOException {
+        Desktop.getDesktop().browse(new URI(SongUtilities.getVideoSongOne()));
+    }
+
+    @FXML
+    private void changeToNextWindow() {
         if (SongCupBuildLogic.getMatch()==6) {
             try {
                 SongStorage.setSongMap(SongUtilities.createFinalMap());

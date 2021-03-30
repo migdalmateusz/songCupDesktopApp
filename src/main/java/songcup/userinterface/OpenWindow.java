@@ -32,17 +32,18 @@ public class OpenWindow {
     }
 
     @FXML
-    private void setArtist(ActionEvent event) {
+    private void setArtist() {
     }
 
     @FXML
-    private void checkArtist(ActionEvent event) {
-        String[] artistIdTable = enterArtist.getText().split(":") ;
-        artistId = artistIdTable[2];
+    private void checkArtist() {
+        String[] artistTable = enterArtist.getText().split("artist/");
+        String[] artistTable2 = artistTable[1].split("\\?");
+        artistId = artistTable2[0];
     }
 
     @FXML
-    private void changeScene(ActionEvent event) {
+    private void changeScene() {
         try {
             SongStorage.setSongMap(SongStorage.createMap());
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/SelectionWindow.fxml"));
