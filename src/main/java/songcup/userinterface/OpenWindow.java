@@ -1,5 +1,6 @@
 package songcup.userinterface;
 
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -21,7 +22,10 @@ public class OpenWindow {
     }
 
     @FXML
-    private Button button;
+    private Button nextButton;
+
+    @FXML
+    private Button checkButton;
 
     @FXML
     private TextField enterArtist;
@@ -47,7 +51,7 @@ public class OpenWindow {
             SongStorage.setSongMap(SongStorage.createMap());
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/SelectionWindow.fxml"));
             Parent parent = loader.load();
-            ((Stage)button.getScene().getWindow()).setScene(new Scene(parent, 700, 700));
+            ((Stage)nextButton.getScene().getWindow()).setScene(new Scene(parent, 700, 700));
         } catch (IOException eox) {
             eox.printStackTrace();
         }
