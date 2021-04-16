@@ -2,11 +2,13 @@ package songcup.problemdomain;
 
 public class Song {
 
+    private int popularity;
     private final String title;
     private int point;
     private final String video;
 
-    public Song(String title, int point, String video) {
+    public Song(int popularity, String title, int point, String video) {
+        this.popularity = popularity;
         this.title = title;
         this.point = point;
         this.video = video;

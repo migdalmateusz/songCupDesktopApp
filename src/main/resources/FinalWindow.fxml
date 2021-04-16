@@ -4,14 +4,14 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="633.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="songcup.userinterface.FinalWindow">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" style="-fx-background-color: #405144;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="songcup.userinterface.FinalWindow">
    <children>
-      <Label layoutX="159.0" layoutY="16.0" prefHeight="72.0" prefWidth="198.0" text="Your playlist">
+      <Label layoutX="275.0" layoutY="36.0" prefHeight="72.0" prefWidth="151.0" text="Your playlist">
          <font>
             <Font size="27.0" />
          </font>
       </Label>
-      <Label fx:id="winner" layoutX="86.0" layoutY="88.0" prefHeight="470.0" prefWidth="446.0" text="Winner">
+      <Label fx:id="winner" layoutX="128.0" layoutY="108.0" prefHeight="470.0" prefWidth="446.0" text="Winner">
          <font>
             <Font size="25.0" />
          </font>

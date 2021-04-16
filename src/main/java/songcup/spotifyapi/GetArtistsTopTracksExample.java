@@ -15,10 +15,6 @@ public class GetArtistsTopTracksExample {
     private static String id = OpenWindow.getArtistId();
     private static final CountryCode countryCode = CountryCode.PL;
 
-    public static void setId(String id) {
-        GetArtistsTopTracksExample.id = id;
-    }
-
     private static final SpotifyApi spotifyApi = new SpotifyApi.Builder()
             .setAccessToken(accessToken)
             .build();
